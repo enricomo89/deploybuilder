@@ -1,3 +1,5 @@
+import { DOWNLOAD_URL_WINDOWS } from "@/lib/download";
+
 const plans = [
   {
     name: "Free",
@@ -11,6 +13,7 @@ const plans = [
       "Community support",
     ],
     cta: "Get started",
+    href: DOWNLOAD_URL_WINDOWS,
     featured: false,
   },
   {
@@ -80,7 +83,7 @@ export function Pricing() {
                 ))}
               </ul>
               <a
-                href="#download"
+                href={p.href ?? "#pricing"}
                 className={
                   p.featured
                     ? "mt-7 block rounded-xl bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-foreground"

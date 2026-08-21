@@ -1,4 +1,5 @@
 import { ArrowRight, Download, Star } from "lucide-react";
+import { DOWNLOAD_URL_WINDOWS, RELEASES_URL } from "@/lib/download";
 
 const chips = ["Pantry recipe planner", "Travel memory map", "Indie shop landing page"];
 
@@ -18,14 +19,16 @@ export function Hero() {
 
         <div id="download" className="mt-9 flex flex-wrap items-center gap-3">
           <a
-            href="#download"
+            href={DOWNLOAD_URL_WINDOWS}
             className="inline-flex items-center gap-3 rounded-2xl bg-primary px-7 py-4 text-base font-bold text-primary-foreground glow transition-transform hover:-translate-y-0.5"
           >
             <Download className="size-[18px]" />
-            <span>Download</span>
+            <span>Download for Windows</span>
           </a>
           <a
-            href="#download"
+            href={RELEASES_URL}
+            target="_blank"
+            rel="noreferrer"
             className="rounded-2xl border border-border bg-card px-6 py-4 text-base font-bold text-foreground shadow-sm transition-colors hover:bg-muted"
           >
             More platforms

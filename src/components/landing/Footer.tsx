@@ -1,4 +1,5 @@
 import { Download } from "lucide-react";
+import { DOWNLOAD_URL_WINDOWS } from "@/lib/download";
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
           Free, open source, and yours to keep.
         </p>
         <a
-          href="#download"
+          href={DOWNLOAD_URL_WINDOWS}
           className="mt-8 inline-flex items-center gap-3 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground glow"
         >
           <Download className="size-4" /> Download Deploy

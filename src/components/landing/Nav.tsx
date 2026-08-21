@@ -1,4 +1,5 @@
 import { Github, Menu } from "lucide-react";
+import { DOWNLOAD_URL_WINDOWS } from "@/lib/download";
 
 const links = [
   { label: "Features", href: "#features" },
@@ -43,7 +44,7 @@ export function Nav() {
             Deploy Pro
           </a>
           <a
-            href="#download"
+            href={DOWNLOAD_URL_WINDOWS}
             className="rounded-xl bg-primary px-4 py-2 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90"
           >
             Download
