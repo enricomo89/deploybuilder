@@ -22,10 +22,7 @@ export function Hero() {
             className="inline-flex items-center gap-3 rounded-2xl bg-primary px-7 py-4 text-base font-bold text-primary-foreground glow transition-transform hover:-translate-y-0.5"
           >
             <Download className="size-[18px]" />
-            <span className="flex flex-col leading-tight">
-              Download Deploy for macOS
-              <span className="text-xs font-medium opacity-80">(Apple Silicon)</span>
-            </span>
+            <span>Download</span>
           </a>
           <a
             href="#download"
