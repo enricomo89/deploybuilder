@@ -38,45 +38,53 @@
 }
 
 :root {
-  --radius: 0.75rem;
-  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --radius: 0.875rem;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --background: oklch(0.16 0.018 264);
-  --foreground: oklch(0.97 0.005 250);
-  --card: oklch(0.2 0.02 264);
-  --card-foreground: oklch(0.97 0.005 250);
-  --popover: oklch(0.2 0.02 264);
-  --popover-foreground: oklch(0.97 0.005 250);
-  --primary: oklch(0.78 0.17 152);
-  --primary-foreground: oklch(0.18 0.03 160);
-  --secondary: oklch(0.26 0.022 264);
-  --secondary-foreground: oklch(0.97 0.005 250);
-  --muted: oklch(0.24 0.02 264);
-  --muted-foreground: oklch(0.7 0.02 258);
-  --accent: oklch(0.72 0.14 215);
-  --accent-foreground: oklch(0.17 0.02 240);
-  --destructive: oklch(0.65 0.2 25);
-  --destructive-foreground: oklch(0.98 0.003 248);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.78 0.17 152);
-  --surface: oklch(0.185 0.019 264);
-  --surface-foreground: oklch(0.97 0.005 250);
-  --success: oklch(0.78 0.17 152);
+  /* Warm off-white canvas, near-navy ink, violet accent */
+  --background: oklch(0.982 0.006 85);
+  --foreground: oklch(0.19 0.045 275);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.045 275);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.045 275);
+  --primary: oklch(0.55 0.24 292);
+  --primary-foreground: oklch(0.99 0.003 280);
+  --secondary: oklch(0.96 0.012 285);
+  --secondary-foreground: oklch(0.24 0.05 275);
+  --muted: oklch(0.955 0.008 90);
+  --muted-foreground: oklch(0.5 0.03 278);
+  --accent: oklch(0.6 0.19 300);
+  --accent-foreground: oklch(0.99 0.003 280);
+  --destructive: oklch(0.62 0.21 25);
+  --destructive-foreground: oklch(0.99 0.003 280);
+  --border: oklch(0.19 0.045 275 / 12%);
+  --input: oklch(0.19 0.045 275 / 16%);
+  --ring: oklch(0.55 0.24 292);
+  --surface: oklch(0.985 0.006 290);
+  --surface-foreground: oklch(0.19 0.045 275);
+  --success: oklch(0.62 0.15 155);
 
   --gradient-hero: radial-gradient(
-    900px 500px at 50% -10%,
-    oklch(0.78 0.17 152 / 0.18),
+    1100px 620px at 50% -20%,
+    oklch(0.55 0.24 292 / 0.1),
     transparent 70%
   );
   --gradient-accent: linear-gradient(
     135deg,
-    oklch(0.78 0.17 152) 0%,
-    oklch(0.72 0.14 215) 100%
+    oklch(0.55 0.24 292) 0%,
+    oklch(0.62 0.2 320) 100%
   );
-  --shadow-glow: 0 0 0 1px oklch(1 0 0 / 0.06), 0 24px 60px -20px oklch(0.78 0.17 152 / 0.25);
-  --shadow-panel: 0 0 0 1px oklch(1 0 0 / 0.07), 0 40px 80px -30px oklch(0 0 0 / 0.7);
+  --shadow-glow: 0 10px 24px -10px oklch(0.55 0.24 292 / 0.45);
+  --shadow-panel:
+    0 0 0 1px oklch(0.19 0.045 275 / 0.08), 0 30px 70px -30px oklch(0.19 0.045 275 / 0.25);
+  --shadow-card: 0 1px 2px oklch(0.19 0.045 275 / 0.04), 0 8px 24px -18px oklch(0.19 0.045 275 / 0.25);
+}
+
+@theme inline {
+  --font-display: var(--font-display);
 }
 
 @layer base {
@@ -94,7 +102,9 @@
   h1,
   h2,
   h3 {
-    letter-spacing: -0.02em;
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.03em;
   }
 }
 
@@ -114,13 +124,20 @@
   box-shadow: var(--shadow-panel);
 }
 
+@utility card-soft {
+  background-color: var(--color-card);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-card);
+}
+
 @utility glow {
   box-shadow: var(--shadow-glow);
 }
 
 @utility grid-lines {
   background-image:
-    linear-gradient(to right, oklch(1 0 0 / 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(1 0 0 / 0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(to right, oklch(0.19 0.045 275 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.19 0.045 275 / 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
+
