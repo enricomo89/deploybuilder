@@ -12,9 +12,7 @@ export function Nav() {
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-6xl items-center gap-8 px-5">
         <a href="#top" className="flex items-center gap-2.5">
-          <span className="grid size-7 place-items-center rounded-lg bg-primary font-display text-xs font-extrabold text-primary-foreground">
-            D
-          </span>
+          <img src="/logo.svg" alt="" aria-hidden="true" className="size-7" />
           <span className="font-display text-lg font-extrabold tracking-tight">Deploy</span>
         </a>
 
